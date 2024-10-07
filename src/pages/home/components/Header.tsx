@@ -150,9 +150,6 @@ const Header: FC<propsTypes> = (props) => {
         </Button>
       </div>
 
-      <Modal title={t("Panel Link")} isModalOpen={shareModal} closeModal={() => setShareModal(false)}>
-        <ShareLinks isModalOpen={shareModal} />
-      </Modal>
 
       <Modal title={t("DNS over HTTPS (DoH)")} isModalOpen={dohModal} closeModal={() => setDohModal(false)}>
         <DohContent />
