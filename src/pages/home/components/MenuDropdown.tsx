@@ -113,54 +113,6 @@ const MenuDropdown: React.FC<propsTypes> = ({dohModal, showTeleProxy, showAllCon
         open={open}
         onClose={handleClose}
       >
-        <MenuItem 
-          onClick={() => {
-            showMainBodyFun(); handleClose()}
-          } 
-          style={{ fontFamily: 'Vazirmatn, sans-serif' }}
-          disableRipple
-        >
-          <HomeIcon />
-          {t('Home')}
-        </MenuItem>
-        <MenuItem 
-          onClick={() => {
-            showAllConfigs(); handleClose()}
-          } 
-          style={{ fontFamily: 'Vazirmatn, sans-serif' }}
-          disableRipple
-        >
-          <QrCodeIcon />
-          {t('All Configs')}
-        </MenuItem>
-        {getInfo.data && getInfo.data?.telegram_proxy_enable ? 
-          <MenuItem 
-            onClick={() => {
-              showTeleProxy(); handleClose()}
-            } 
-            style={{ fontFamily: 'Vazirmatn, sans-serif' }}
-            disableRipple
-          >
-            <TelegramIcon />
-            {t('Telegram Proxy')}
-          </MenuItem>
-        : null}
-        <MenuItem 
-          onClick={() => {
-            dohModal(true); handleClose()}
-          } 
-          style={{ fontFamily: 'Vazirmatn, sans-serif' }}
-          disableRipple
-        >
-          <DnsIcon />
-          {t('DNS over HTTPS')}
-        </MenuItem>
-        {getInfo.data && getInfo.data?.speedtest_enable ? 
-          <MenuItem style={{ fontFamily: 'Vazirmatn, sans-serif' }} onClick={() => { handleGoToSpeedTest(); handleClose();}} disableRipple>
-            <SpeedIcon />
-            {t('Speed Test')}
-          </MenuItem>
-        : null}
         <MenuItem style={{ fontFamily: 'Vazirmatn, sans-serif' }} onClick={() => { setChangeLangModal(true); handleClose();}} disableRipple>
           <TranslateIcon />
           {t('Language Settings')}
