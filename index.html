@@ -19,8 +19,15 @@
     <script type="module" src="./src/main.tsx"></script>
     <!--<script src="node_modules/smartbanner.js/dist/smartbanner.min.js"></script>-->
     <script>
+            function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+      }
+
+      // گرفتن مقدار username از URL
+      const username = getQueryParam('username') || 'tunnelino5446700'; 
       window.appVersion = '{{version}}';
-      window.deepLink = "tunnelino://login?username=tunnelino5446700&password=22030933&auto=true"
+      window.deepLink = `tunnelino://login?username=${getQueryParam('username')}&password=${getQueryParam('password')}&auto=true`
     </script>
   </body>
 </html>
