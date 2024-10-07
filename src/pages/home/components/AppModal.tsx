@@ -126,6 +126,8 @@ const AppModal = ({ profileUrl }) => {
     }
 
     const importApp = (link: string | undefined) => {   
+
+        console.log('toch')
         if(link) {
             // Open a new tab with the specified link
             window.open(link);
